@@ -13,6 +13,7 @@ def run_script():
 
     # Change the current directory to /content/
     os.chdir('/content/')
+    os.makedirs("EasyDataset", exist_ok=True)
     print("/content klasörüne geçildi.")
 
     # Define the repo path
