@@ -122,7 +122,7 @@ def setup_environment(ForceUpdateDependencies, ForceTemporaryStorage):
                 except Exception as e:
                     print('Failed to extract a file (this isn\'t normal)... forcing an update to compensate')
                     ForceUpdateDependencies = True
-            print(f'Extraction of {content_file_path} to {extract_path} completed.')
+            print(f'{content_file_path} dosyasını {extract_path} yoluna çıkardık.')
 
         if ForceUpdateDependencies:
             install_packages()
