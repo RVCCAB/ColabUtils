@@ -119,13 +119,11 @@ def download_pretrained_models():
 
         # Download hubert_base.pt to the base path
         hubert_url = base_url + "hubert_base.pt"
-        print(hubert_url)
         hubert_filepath = os.path.join(base_path, "hubert_base.pt")
         download_file(hubert_url, hubert_filepath)
         
         rmvpe_url = base_url + "rmvpe.pt"
         rmvpe_filepath = os.path.join(base_path, "rmvpe.pt")
-        print(rmvpe_url)
 
         download_file(rmvpe_url, rmvpe_filepath)
         

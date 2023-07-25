@@ -67,10 +67,10 @@ def setup_environment(ForceUpdateDependencies, ForceTemporaryStorage):
         changed_files = {f for f in unchanged_files if old_files[f] != new_files[f]}
 
         for file in removed_files:
-            print(f'File has been removed: {file}')
+            print(f'Dosya silindi: {file}')
 
         for file in changed_files:
-            print(f'File has been updated: {file}')
+            print(f'Dosya güncellendi: {file}')
 
         return list(added_files) + list(changed_files)
 
@@ -86,25 +86,25 @@ def setup_environment(ForceUpdateDependencies, ForceTemporaryStorage):
     if not os.path.exists(file_path):
         folder_path = os.path.dirname(file_path)
         os.makedirs(folder_path, exist_ok=True)
-        print('No cached dependency install found. Attempting to download GitHub backup..')
+        print('CachedRVC bulunamadı, yükleniyor...')
 
         try:
             download_url = "https://github.com/kalomaze/QuickMangioFixes/releases/download/release3/CachedRVC.tar.gz"
             subprocess.run(["wget", "-O", file_path, download_url])
-            print('Download completed successfully!')
+            print('İndirme başarılı')
         except Exception as e:
-            print('Download failed:', str(e))
+            print('İndirme başarısız:', str(e))
 
             # Delete the failed download file
             if os.path.exists(file_path):
                 os.remove(file_path)
-            print('Failed download file deleted. Continuing manual backup..')
+            print('İndirme başarısız, manuel yedeğe geçiliyor...')
 
     if Path(file_path).exists():
         if ForceTemporaryStorage:
-            print('Finished downloading CachedRVC.tar.gz.')
+            print('CachedRVC.tar.gz. başarıyla indirildi.')
         else:
-            print('CachedRVC.tar.gz found on Google Drive. Proceeding to copy and extract...')
+            print('CachedRVC.tar.gz Google Drive da bulundu, içeri aktarılıyor...')
 
         # Check if ForceTemporaryStorage is True and skip copying if it is
         if ForceTemporaryStorage:
