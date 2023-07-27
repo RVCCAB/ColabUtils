@@ -102,7 +102,7 @@ def download_pretrained_models():
         ]
     }
 
-    base_url = "https://RVCCABwebui.s3.eu-central-1.amazonaws.com/rvcwebui/"
+    base_url = "https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/"
     base_path = "/content/RVCCAB/"
 
     # Calculate total number of files to download
